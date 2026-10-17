@@ -4,7 +4,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ipynb_checkpoints/
-data/*.db
 data/*.sqlite
 .env
 secrets.toml

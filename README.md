@@ -9,7 +9,7 @@ Coordinador: Freddy Isai Solis Gomez
 ## Integrantes y roles
 
 - Freddy Isai Solis Gomez: base de datos y lógica, análisis y gráficos
-- Dixy Gimena: machine learning
+- Dixy Jimena Aamaya Romero: machine learning
 - Angely Gissel Rivera Sandoval: interfaz y documentación
 
 ## Qué hace

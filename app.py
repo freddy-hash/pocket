@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.ui import auth_ui
+from src.ui import auth_ui, gastos_ui
 
 st.set_page_config(page_title="Pocket", page_icon="💰")
 
@@ -14,4 +14,5 @@ if usuario is None:
 else:
     auth_ui.mostrar_barra_usuario()
     st.success(f"Bienvenida/o, {usuario['nombre']}.")
-    st.info("Aquí irán el registro de gastos y los gráficos.")
+    gastos_ui.mostrar_formulario_gasto(usuario["id"])
+    gastos_ui.mostrar_lista_gastos(usuario["id"])

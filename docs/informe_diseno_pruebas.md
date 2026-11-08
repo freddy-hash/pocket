@@ -154,19 +154,39 @@ Las 19 pruebas corren sobre una **copia temporal** de `pocket.db`, así que no m
 
 *Pendiente: se completará cuando `src/ml/clasificador.py` esté disponible.*
 
+
+
 ### 6.3 Pruebas manuales de la interfaz
 
 | N.º | Prueba | Resultado esperado | Resultado obtenido |
 |---|---|---|---|
-| M1 | Registrar un usuario nuevo | Mensaje verde de éxito | Correcto |
+| M1 | Registrar un usuario nuevo | Mensaje verde de éxito | Correcto (captura 1) |
 | M2 | Iniciar sesión con datos correctos | Mensaje de bienvenida y nombre en la barra lateral | Correcto |
 | M3 | Cerrar sesión | Regresa a la pantalla de inicio de sesión | Correcto |
-| M4 | Registrar un gasto válido | "Gasto registrado correctamente." | Correcto |
-| M5 | Ver la lista de gastos | Total y tabla con el gasto | Correcto |
-| M6 | Ver el gráfico por categoría | Barras por categoría con su total | Correcto |
-| M7 | Cambiar entre modo claro y oscuro | La interfaz cambia de tema | Correcto |
+| M4 | Registrar un gasto válido y ver la lista | "Gasto registrado correctamente." y tabla con el total | Correcto (captura 3) |
+| M5 | Ver el gráfico por categoría | Barras por categoría con su total | Correcto (captura 4) |
+| M6 | Cambiar entre modo claro y oscuro | La interfaz cambia de tema | Correcto (captura 5) |
+| E1 | Registrar con contraseña corta | Mensaje de error de la contraseña | Correcto (captura 2) |
 
-*Pendiente: agregar capturas de pantalla de cada prueba y probar los casos de error (contraseña corta, usuario repetido, monto cero).*
+**Captura 1. Registro exitoso**
+
+![Registro exitoso](capturas/m1_registro.png)
+
+**Captura 2. Error por contraseña corta**
+
+![Error de registro](capturas/e1_error_registro.png)
+
+**Captura 3. Gasto registrado y lista de gastos**
+
+![Gasto y lista](capturas/m4_gasto_lista.png)
+
+**Captura 4. Gráfico por categoría**
+
+![Gráfico por categoría](capturas/m6_grafico.png)
+
+**Captura 5. Modo oscuro**
+
+![Modo oscuro](capturas/m7_modo_oscuro.png)
 
 
 ---

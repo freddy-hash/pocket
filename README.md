@@ -3,14 +3,15 @@
 Aplicación web de finanzas personales con categorización inteligente de gastos.
 Proyecto final de Programación Computacional III, Universidad Gerardo Barrios.
 
-Equipo: Los Ponis
+Equipo: Ledgerline
 Coordinador: Freddy Isai Solis Gomez
 
-## Integrantes y roles
+## Integrantes
 
-- Freddy Isai Solis Gomez: base de datos y lógica, análisis y gráficos
-- Dixy Jimena Aamaya Romero: machine learning
-- Angely Gissel Rivera Sandoval: interfaz y documentación
+- Freddy Isai Solis Gomez
+- Dixy Jimena Aamaya Romero
+- Angely Gissel Rivera Sandoval
+- Douglas Jefferson Sanchez Jurado
 
 ## Qué hace
 

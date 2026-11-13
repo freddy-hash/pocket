@@ -160,7 +160,7 @@ Las 19 pruebas corren sobre una **copia temporal** de `pocket.db`, así que no m
 
 | N.º | Prueba | Resultado esperado | Resultado obtenido |
 |---|---|---|---|
-| M1 | Registrar un usuario nuevo | Mensaje verde de éxito | Correcto (captura 1) |
+| M1 | Registrar un usuario nuevo | Inicia sesión automáticamente y muestra la pantalla de gastos | Correcto (captura 1) |
 | M2 | Iniciar sesión con datos correctos | Mensaje de bienvenida y nombre en la barra lateral | Correcto |
 | M3 | Cerrar sesión | Regresa a la pantalla de inicio de sesión | Correcto |
 | M4 | Registrar un gasto válido y ver la lista | "Gasto registrado correctamente." y tabla con el total | Correcto (captura 3) |
@@ -169,6 +169,8 @@ Las 19 pruebas corren sobre una **copia temporal** de `pocket.db`, así que no m
 | E1 | Registrar con contraseña corta | Mensaje de error de la contraseña | Correcto (captura 2) |
 
 **Captura 1. Registro exitoso**
+
+*Nota: esta captura se tomó antes de un cambio posterior. Ahora, al registrarse correctamente, la aplicación inicia sesión automáticamente y lleva al usuario directo a la pantalla de gastos, sin mostrar el mensaje verde.*
 
 ![Registro exitoso](capturas/m1_registro.png)
 

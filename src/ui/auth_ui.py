@@ -38,15 +38,22 @@ def _formulario_registro():
     with st.form("form_registro"):
         nombre = st.text_input("Nombre completo")
         usuario = st.text_input("Usuario")
-        contrasena = st.text_input("Contraseña (6 a 10 caracteres)", type="password")
+        contrasena = st.text_input("Contraseña (6 a 72 caracteres)", type="password")
         enviar = st.form_submit_button("Crear cuenta")
 
     if enviar:
         ok, mensaje = db.registrar_usuario(nombre, usuario, contrasena)
-        if ok:
-            st.success(mensaje + " Ahora puedes iniciar sesión.")
-        else:
+        if not ok:
             st.error(mensaje)
+            return
+
+        # Registro exitoso: iniciar sesión automáticamente
+        ok, resultado = db.iniciar_sesion(usuario, contrasena)
+        if ok:
+            st.session_state["usuario"] = resultado
+            st.rerun()
+        else:
+            st.success(mensaje + " Ahora puedes iniciar sesión.")
 
 
 def mostrar_autenticacion():

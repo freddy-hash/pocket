@@ -168,7 +168,7 @@ def mostrar_seccion_presupuestos(id_usuario: int):
                 col1, col2, col3 = st.columns([3, 2, 1])
                 with col1:
                     st.markdown(f"**{cat_nombre}**")
-                    st.caption(f"Gastado: **${gastado:.2f}** / Límite: **${limite:.2f}** ({porcentaje:.1f}%)")
+                    st.caption(f"Gastado: **\\${gastado:.2f}** / Límite: **\\${limite:.2f}** ({porcentaje:.1f}%)")
                 with col2:
                     st.progress(progreso)
                 with col3:
@@ -181,8 +181,7 @@ def mostrar_seccion_presupuestos(id_usuario: int):
                             st.error(mensaje)
 
                 if porcentaje >= 100.0:
-                    st.error(f"🚨 Alerta (100%): Se alcanzó o superó el límite de **{cat_nombre}** en {mes_a_mostrar} (${gastado:.2f} de ${limite:.2f}).")
+                    st.error(f"🚨 Alerta (100%): Se alcanzó o superó el límite de **{cat_nombre}** en {mes_a_mostrar} (\\${gastado:.2f} de \\${limite:.2f}).")
                 elif porcentaje >= 80.0:
-                    st.warning(f"⚠️ Alerta (80%): Ya llevas el **{porcentaje:.1f}%** del presupuesto de **{cat_nombre}** en {mes_a_mostrar} (${gastado:.2f} de ${limite:.2f}).")
-
+                    st.warning(f"⚠️ Alerta (80%): Ya llevas el **{porcentaje:.1f}%** del presupuesto de **{cat_nombre}** en {mes_a_mostrar} (\\${gastado:.2f} de \\${limite:.2f}).")
                 st.divider()

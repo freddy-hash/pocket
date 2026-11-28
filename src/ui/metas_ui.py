@@ -79,8 +79,8 @@ def mostrar_seccion_metas(id_usuario: int):
                 col1, col2, col3 = st.columns(3)
                 with col1:
                     st.markdown(
-                        f"Ahorrado: **${ahorrado:.2f}** / ${objetivo:.2f} (**{porcentaje:.1f}%**)"
-                    )
+                        f"Ahorrado: **\\${ahorrado:.2f}** / \\${objetivo:.2f} (**{porcentaje:.1f}%**)"                    )
+
                 with col2:
                     st.markdown(f"Creada: **{m['fecha_creacion']}**")
                 with col3:

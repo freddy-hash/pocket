@@ -1,7 +1,8 @@
 import streamlit as st
-from src.ui import auth_ui, gastos_ui, graficos_ui, presupuestos_ui, metas_ui, reportes_ui
+from src.ui import auth_ui, estilos, gastos_ui, graficos_ui, presupuestos_ui, metas_ui, reportes_ui
 
 st.set_page_config(page_title="Pocket", page_icon="💰")
+estilos.aplicar_estilos()
 st.title("💰 Pocket")
 
 usuario = auth_ui.usuario_actual()

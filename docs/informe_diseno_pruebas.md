@@ -150,9 +150,38 @@ Las 19 pruebas corren sobre una **copia temporal** de `pocket.db`, así que no m
 
 ![Resultado de probar_db.py](capturas/prueba_db.png)
 
-### 6.2 Pruebas del clasificador (Dixy)
+### 6.2 Pruebas automáticas (pytest)
 
-*Pendiente: se completará cuando `src/ml/clasificador.py` esté disponible.*
+Se ejecutan con `python -m pytest tests -v`. **Resultado: 19 de 19 pruebas correctas.**
+
+**Clasificador de categorías (`tests/test_clasificador.py`, Dixy):**
+
+| Prueba | Qué verifica | Resultado |
+|---|---|---|
+| test_comida | Sugiere *Comida y bebida* | PASSED |
+| test_transporte | Sugiere *Transporte* | PASSED |
+| test_servicios | Sugiere *Servicios basicos* | PASSED |
+| test_educacion | Sugiere *Educación y materiales* | PASSED |
+| test_entretenimiento | Sugiere *Entretenimiento y salidas* | PASSED |
+| test_ropa | Sugiere *Ropa y compras personales* | PASSED |
+| test_medicos | Sugiere *Gastos medicos* | PASSED |
+| test_hogar | Sugiere *Hogar renta y ahorro* | PASSED |
+| test_descripcion_vacia | Descripción vacía: no se rompe | PASSED |
+| test_solo_espacios | Solo espacios: no se rompe | PASSED |
+| test_texto_raro | Texto sin sentido: no se rompe | PASSED |
+| test_solo_simbolos | Solo símbolos: no se rompe | PASSED |
+| test_no_es_texto | Entrada que no es texto: no se rompe | PASSED |
+| test_devuelve_categoria_valida | El resultado es una categoría existente | PASSED |
+
+**Validaciones (`tests/test_validaciones.py`):**
+
+| Prueba | Qué verifica | Resultado |
+|---|---|---|
+| test_validar_monto_valido | Acepta montos válidos | PASSED |
+| test_validar_monto_invalido | Rechaza montos inválidos | PASSED |
+| test_validar_texto_no_vacio | Rechaza textos vacíos | PASSED |
+| test_validar_contrasena | Valida la longitud de la contraseña | PASSED |
+| test_validar_fecha_iso | Valida el formato AAAA-MM-DD | PASSED |
 
 
 

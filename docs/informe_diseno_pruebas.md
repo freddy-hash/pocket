@@ -52,7 +52,20 @@ Interfaz (Streamlit)  -->  Lógica y datos (db.py)  -->  SQLite (pocket.db)
 3. Con la sesión activa, `app.py` muestra el formulario de gastos, la lista de gastos y el gráfico.
 4. El botón **Cerrar sesión** de la barra lateral borra los datos de la sesión y regresa a la pantalla inicial.
 
----
+### 2.2 Módulos agregados en la segunda etapa
+
+| Módulo | Archivo | Función |
+|---|---|---|
+| Presupuestos | `src/ui/presupuestos_ui.py` | Límite mensual por categoría, barra de progreso y alertas al 80 % y 100 %. |
+| Metas de ahorro | `src/ui/metas_ui.py` | Crear metas, abonar y ver el progreso. |
+| Reportes | `src/ui/reportes_ui.py` | Resumen de gastos y exportación a CSV y Excel. |
+| Clasificador | `src/ml/clasificador.py` | Sugiere la categoría a partir de la descripción (modelo scikit-learn en `models/clasificador.joblib`). |
+| Validaciones | `src/utils/validaciones.py` | Funciones reutilizables para validar monto, texto, contraseña y fecha. |
+
+### 2.3 Navegación
+
+`app.py` muestra un menú lateral **Navegación** con cuatro secciones: Gastos, Presupuestos, Metas de Ahorro y Reportes. Según la opción elegida, llama a la función de la pantalla correspondiente y le pasa el `id` del usuario con la sesión iniciada.
+
 
 ## 3. Base de datos
 
@@ -81,7 +94,11 @@ Cada transacción pertenece a un usuario y a una categoría mediante llaves for�
 | **`st.session_state`** para la sesión | Variables globales | Streamlit vuelve a ejecutar el script en cada interacción; `session_state` conserva el usuario entre ejecuciones y evita que se mezclen datos entre usuarios. |
 | **Mensajes de error de `db.py`** mostrados con `st.error` | Validar también en la interfaz | Las reglas viven en un solo lugar (la capa de datos) y la interfaz solo muestra el mensaje, sin duplicar lógica. |
 
----
+| **Menú lateral** (`st.sidebar`) para navegar | Pestañas en la página principal | Hay cuatro secciones con formularios largos; el menú lateral siempre está visible y deja la página principal para el contenido. |
+| **Categoría sugerida por ML y editable** | Asignarla automáticamente sin permitir cambios | El modelo puede equivocarse; el usuario decide y, si el modelo falla o devuelve `None`, elige a mano. |
+| **Formulario de gasto sin `st.form`** | Usar `st.form` | `st.form` no reacciona mientras se escribe; sin él, al presionar Enter en la descripción se actualiza la categoría sugerida. |
+| **`\$` en los montos de texto** | Escribir `$` sin proteger | Streamlit interpreta dos `$` como una fórmula matemática y rompía el formato; se escapa con `\\$`. |
+
 
 ## 5. Validaciones
 
